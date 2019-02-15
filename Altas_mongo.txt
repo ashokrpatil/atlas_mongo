@@ -1,0 +1,144 @@
+Altas account details and Mongo queries for CRUD operation:
+
+Altas account details:
+Username/emailid:ashokrpatil12345@gmail.com
+
+Mongo queries for CRUD operation:
+
+Create TestDB:
+use TestDB
+
+Create Collection Transporter:
+db.createCollection("Transporter")
+
+
+Insert first Document in Transporter collection:
+db.Transporter.insert({ 
+   Cl:"01",
+   Vendor:"Rigved",
+   Cty:"Navi Mumbai",
+   Name1:"Ashok",
+   Name2:"Akshat",
+   Name3:"Vaishnavi",
+   Name4:"Jayash",
+
+   City:"Pune",
+
+   District:"Pune",
+
+   POBox:"400701",
+
+   POBoxpcd:"4000709",
+
+   PostalCode:"709",
+
+   Rg:"02",
+   SearchTerm:"03",
+   Street:"LBS Road",
+   Address:"Bhandup",
+   Title:"courier",
+   Date:"14/02/19",
+   Createdby:"Ashok",
+   ISRNumber:"RV0472",
+   Group:"01",
+   Customer:"Reliance",
+   Telephone1:"022-27468282",
+   Telephone2:"022-27468383",
+   POBxcty:"Navi Mumbai",
+   Site:"Mumbai"
+})
+
+
+Update a field of first Document Transporter for Vendor:
+db.Transporter.update({'Vendor':'Rigved'},{$set:{'Vendor':'Rigved tech'}})
+
+
+
+delete a field of first Document PostalCode:"709", Transporter for Vendor:
+db.Transporter.update({},{$unset:{PostalCode:''}})
+
+
+
+read Transporter collection
+db.Transporter.find().pretty()
+
+
+
+Insert second document in Transporter collection:
+db.Transporter.insert({ 
+   Cl:"02",
+   Vendor:"Reliance",
+   Cty:"Koparkhairane",
+   Name1:"Prakash",
+   Name2:"Ashok",
+   Name3:"Akshat",
+   Name4:"Jayash",
+
+   City:"Mumbai",
+
+   District:"Mumbai",
+
+   POBox:"400702",
+
+   POBoxpcd:"4000001",
+
+   PostalCode:"003",
+
+   Rg:"03",
+   SearchTerm:"04",
+   Street:"MG Road",
+   Address:"Ghatkopar",
+   Title:"courier",
+   Date:"15/02/19",
+   Createdby:"Ashok",
+   ISRNumber:"RV0472",
+   Group:"01",
+   Customer:"RCP",
+   Telephone1:"022-27468585",
+   Telephone2:"022-27468686",
+   POBxcty:"Navi Mumbai",
+   Site:"Mumbai"
+})
+
+Insert third document in Transporter collection:
+db.Transporter.insert({ 
+   Cl:"02",
+   Vendor:"Reliance",
+   Cty:"Koparkhairane",
+   Name1:"Prakash",
+   Name2:"Ashok",
+   Name3:"Akshat",
+   Name4:"Jayash",
+
+   City:"Mumbai",
+
+   District:"Mumbai",
+
+   POBox:"400702",
+
+   POBoxpcd:"4000001",
+
+   PostalCode:"003",
+
+   Rg:"03",
+   SearchTerm:"04",
+   Street:"MG Road",
+   Address:"Ghatkopar",
+   Title:"courier",
+   Date:"15/02/19",
+   Createdby:"Ashok",
+   ISRNumber:"RV0472",
+   Group:"01",
+   Customer:"RCP",
+   Telephone1:"022-27468585",
+   Telephone2:"022-27468686",
+   POBxcty:"Navi Mumbai",
+   Site:"Mumbai"
+})
+
+Delete third document from Transporter collection:
+db.Transporter.remove({_id:ObjectId("5c6644bb0f1b1e41964d6a0f")})
+
+
+
+
